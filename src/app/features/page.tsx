@@ -1,5 +1,4 @@
 import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { PageIntro } from "@/components/ui/page-intro";
 import { Reveal } from "@/components/ui/reveal";
@@ -8,7 +7,6 @@ import { features } from "@/lib/site-data";
 export default function FeaturesPage() {
   return (
     <>
-      <SiteHeader />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-24 sm:px-6 lg:px-8">
         <PageIntro
           eyebrow="Features"

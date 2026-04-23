@@ -1,29 +1,16 @@
 import Link from "next/link";
-import { navigation, site } from "@/lib/site-data";
+import { site } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-cyan-100/20 bg-slate-900/85">
-      <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <p className="text-base font-semibold text-white">{site.name}</p>
           <p className="mt-2 text-sm text-slate-300">{site.tagline}</p>
           <p className="mt-3 text-sm text-slate-400">
             AI automation for SMEs that want faster follow-up, better qualification, and more booked demos.
           </p>
-        </div>
-
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-slate-300">Pages</p>
-          <ul className="mt-3 space-y-2 text-sm text-slate-300">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="transition hover:text-cyan-100">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
 
         <div>
