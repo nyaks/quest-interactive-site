@@ -7,31 +7,34 @@ import { navigation } from "@/lib/site-data";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const pathname = usePathname();
-  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const lastScroll = useRef(0);
+
+  useEffect(() => {
+    function onScroll() {
+      const current = window.scrollY;
+      if (current > lastScroll.current && current > 100) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScroll.current = current;
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") setOpen(false);
     }
-
-    function onPointerDown(event: PointerEvent) {
-      if (!open || !wrapperRef.current) return;
-      const target = event.target as Node;
-      if (!wrapperRef.current.contains(target)) setOpen(false);
-    }
-
     document.addEventListener("keydown", onKeyDown);
-    document.addEventListener("pointerdown", onPointerDown);
-
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.removeEventListener("pointerdown", onPointerDown);
-    };
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
   return (
-    <header ref={wrapperRef} className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/50 backdrop-blur-md">
+    <header className={`sticky top-0 z-40 border-b border-white/10 bg-slate-950/50 backdrop-blur-md transition-transform duration-300 ${hidden ? "-translate-y-full" : ""}`}>
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <button
           type="button"

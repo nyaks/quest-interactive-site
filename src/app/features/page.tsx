@@ -16,7 +16,8 @@ export default function FeaturesPage() {
           description="Every feature is built to reduce response time, improve lead quality, and convert more inbound traffic into booked demos."
         />
 
-        <section className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <section className="min-h-screen flex items-center py-12 sm:py-16">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 w-full">
           {features.map((feature, index) => (
             <Reveal key={feature.title} delay={70 * index}>
               <article className="glass-card rounded-3xl p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40">
@@ -28,6 +29,7 @@ export default function FeaturesPage() {
               </article>
             </Reveal>
           ))}
+          </div>
         </section>
 
         <div className="pt-12">

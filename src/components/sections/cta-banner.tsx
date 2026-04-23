@@ -5,7 +5,8 @@ import { site } from "@/lib/site-data";
 export function CtaBanner() {
   return (
     <Reveal>
-      <section className="glass-card rounded-3xl p-9 sm:p-11">
+      <section className="min-h-screen flex items-center py-12 sm:py-16">
+      <div className="glass-card rounded-3xl p-9 sm:p-11 w-full">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Ready to convert faster?</p>
         <h2 className="mt-4 text-2xl font-semibold text-white sm:text-3xl">Your next lead should never wait.</h2>
         <p className="mt-4 max-w-2xl text-slate-100">
@@ -25,6 +26,7 @@ export function CtaBanner() {
             Chat on WhatsApp
           </Link>
         </div>
+      </div>
       </section>
     </Reveal>
   );

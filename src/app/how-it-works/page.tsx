@@ -16,23 +16,25 @@ export default function HowItWorksPage() {
           description="Quest Interactive automates inbound conversations, qualification, and booking so your team focuses on high-value conversations."
         />
 
-        <section className="grid gap-5 sm:grid-cols-2">
-          {steps.map((step, index) => (
-            <Reveal key={step.title} delay={90 * index}>
-              <article className="glass-card rounded-3xl p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40">
-                <div className="flex items-start gap-4">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-lg font-semibold text-cyan-100">
-                    {index + 1}
-                  </span>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Step {index + 1}</p>
-                    <h2 className="mt-2 text-xl font-semibold text-white">{step.title}</h2>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-100">{step.detail}</p>
+        <section className="min-h-screen flex items-center py-12 sm:py-16">
+          <div className="grid gap-5 sm:grid-cols-2 w-full">
+            {steps.map((step, index) => (
+              <Reveal key={step.title} delay={90 * index}>
+                <article className="glass-card rounded-3xl p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40">
+                  <div className="flex items-start gap-4">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-lg font-semibold text-cyan-100">
+                      {index + 1}
+                    </span>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">Step {index + 1}</p>
+                      <h2 className="mt-2 text-xl font-semibold text-white">{step.title}</h2>
+                      <p className="mt-3 text-sm leading-relaxed text-slate-100">{step.detail}</p>
+                    </div>
                   </div>
-                </div>
-              </article>
-            </Reveal>
-          ))}
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </section>
 
         <div className="pt-12">

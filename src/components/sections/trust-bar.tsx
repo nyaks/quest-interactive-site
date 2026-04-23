@@ -6,7 +6,7 @@ const industries = ["Logistics", "Legal", "Real Estate", "Recruitment", "E-comme
 
 export function TrustBar() {
   return (
-    <section className="py-10 sm:py-12">
+    <section className="min-h-screen flex items-center py-12 sm:py-16">
       <Reveal>
         <div className="glass-card rounded-3xl p-7 sm:p-8">
           <SectionHeading

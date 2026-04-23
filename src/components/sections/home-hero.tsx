@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/reveal";
 
 export function HomeHero() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="min-h-screen flex items-center py-16 sm:py-20">
       <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div className="animate-fade-in-up">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">{site.tagline}</p>

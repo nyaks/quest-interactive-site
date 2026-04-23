@@ -16,7 +16,8 @@ export default function CaseStudiesPage() {
           description="These are structured placeholder case studies to demonstrate expected outcomes and storytelling format for future client results."
         />
 
-        <section className="grid gap-5 md:grid-cols-3">
+        <section className="min-h-screen flex items-center py-12 sm:py-16">
+          <div className="grid gap-5 md:grid-cols-3 w-full">
           {caseStudies.map((study, index) => (
             <Reveal key={study.industry} delay={100 * index}>
               <article className="glass-card rounded-3xl p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40">
@@ -29,6 +30,7 @@ export default function CaseStudiesPage() {
               </article>
             </Reveal>
           ))}
+          </div>
         </section>
 
         <div className="pt-12">
