@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { PageIntro } from "@/components/ui/page-intro";
 import { Reveal } from "@/components/ui/reveal";
@@ -7,6 +8,7 @@ import { site } from "@/lib/site-data";
 export default function ContactPage() {
   return (
     <>
+      <SiteHeader />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-24 sm:px-6 lg:px-8">
         <PageIntro
           eyebrow="Contact"

@@ -3,7 +3,7 @@ import { site } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-cyan-100/20 bg-slate-900/85">
+    <footer className="border-t border-cyan-100/20 bg-slate-900">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <p className="text-base font-semibold text-white">{site.name}</p>
