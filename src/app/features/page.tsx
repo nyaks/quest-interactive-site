@@ -2,6 +2,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { PageIntro } from "@/components/ui/page-intro";
+import { Reveal } from "@/components/ui/reveal";
 import { features } from "@/lib/site-data";
 
 export default function FeaturesPage() {
@@ -17,17 +18,15 @@ export default function FeaturesPage() {
 
         <section className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <article
-              key={feature.title}
-              className="animate-fade-in-up rounded-3xl border border-cyan-100/20 bg-slate-800/75 p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40"
-              style={{ animationDelay: `${index * 70}ms` }}
-            >
-              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-xl leading-none text-cyan-100">
-                ✦
-              </div>
-              <h2 className="text-lg font-semibold text-white">{feature.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-200">{feature.description}</p>
-            </article>
+            <Reveal key={feature.title} delay={70 * index}>
+              <article className="glass-card rounded-3xl p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40">
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-xl leading-none text-cyan-100">
+                  ✦
+                </div>
+                <h2 className="text-lg font-semibold text-white">{feature.title}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-slate-100">{feature.description}</p>
+              </article>
+            </Reveal>
           ))}
         </section>
 

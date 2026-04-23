@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { PageIntro } from "@/components/ui/page-intro";
+import { Reveal } from "@/components/ui/reveal";
 import { site } from "@/lib/site-data";
 
 export default function ContactPage() {
@@ -16,11 +17,12 @@ export default function ContactPage() {
         />
 
         <section className="grid gap-7 lg:grid-cols-[1.2fr_0.8fr]">
-          <form
-            className="animate-fade-in-up rounded-3xl border border-cyan-100/20 bg-slate-800/75 p-7"
-            action="#"
-            method="post"
-          >
+          <Reveal>
+            <form
+              className="glass-card rounded-3xl p-7"
+              action="#"
+              method="post"
+            >
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="text-sm text-slate-200">
                 Full name
@@ -76,8 +78,10 @@ export default function ContactPage() {
               Request Demo
             </button>
           </form>
+          </Reveal>
 
-          <aside className="space-y-5 animate-fade-in-up rounded-3xl border border-cyan-100/20 bg-slate-800/75 p-7">
+          <Reveal delay={120}>
+            <aside className="glass-card space-y-5 rounded-3xl p-7">
             <h2 className="text-xl font-semibold text-white">Talk to Quest Interactive</h2>
             <p className="text-sm text-slate-300">
               Prefer WhatsApp? Start a conversation and we will walk you through a live demo flow.
@@ -91,6 +95,7 @@ export default function ContactPage() {
             <p className="text-sm text-slate-200">Email: hello@questinteractive.example</p>
             <p className="text-sm text-slate-200">Phone: +254 700 000 000</p>
           </aside>
+          </Reveal>
         </section>
       </main>
       <SiteFooter />

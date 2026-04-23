@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { PageIntro } from "@/components/ui/page-intro";
+import { Reveal } from "@/components/ui/reveal";
 import { pricingTiers } from "@/lib/site-data";
 
 export default function PricingPage() {
@@ -17,33 +18,31 @@ export default function PricingPage() {
 
         <section className="grid gap-6 lg:grid-cols-3">
           {pricingTiers.map((tier, index) => (
-            <article
-              key={tier.name}
-              className={`animate-fade-in-up rounded-3xl border p-7 transition duration-300 hover:-translate-y-1 ${
-                tier.featured
-                  ? "border-cyan-200/55 bg-cyan-200/12"
-                  : "border-cyan-100/20 bg-slate-800/75 hover:border-cyan-200/40"
-              }`}
-              style={{ animationDelay: `${index * 90}ms` }}
-            >
-              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-xl leading-none text-cyan-100">
-                {tier.featured ? "★" : "✓"}
-              </div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200">{tier.name}</p>
-              <p className="mt-3 text-3xl font-semibold text-white">{tier.price}</p>
-              <p className="mt-2 text-sm leading-relaxed text-slate-200">{tier.description}</p>
-              <ul className="mt-5 space-y-2 text-sm text-slate-100">
-                {tier.includes.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-              <Link
-                href="/contact"
-                className="mt-7 inline-block rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-200"
+            <Reveal key={tier.name} delay={90 * index}>
+              <article
+                className={`glass-card rounded-3xl p-7 transition duration-300 hover:-translate-y-1 ${
+                  tier.featured ? "ring-1 ring-cyan-200/50" : "hover:border-cyan-200/40"
+                }`}
               >
-                Book a Demo
-              </Link>
-            </article>
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-xl leading-none text-cyan-100">
+                  {tier.featured ? "★" : "✓"}
+                </div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200">{tier.name}</p>
+                <p className="mt-3 text-3xl font-semibold text-white">{tier.price}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-100">{tier.description}</p>
+                <ul className="mt-5 space-y-2 text-sm text-slate-100">
+                  {tier.includes.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
+                <Link
+                  href="/contact"
+                  className="mt-7 inline-block rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-200"
+                >
+                  Book a Demo
+                </Link>
+              </article>
+            </Reveal>
           ))}
         </section>
       </main>

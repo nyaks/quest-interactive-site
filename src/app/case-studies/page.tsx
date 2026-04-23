@@ -2,6 +2,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { PageIntro } from "@/components/ui/page-intro";
+import { Reveal } from "@/components/ui/reveal";
 import { caseStudies } from "@/lib/site-data";
 
 export default function CaseStudiesPage() {
@@ -17,18 +18,16 @@ export default function CaseStudiesPage() {
 
         <section className="grid gap-5 md:grid-cols-3">
           {caseStudies.map((study, index) => (
-            <article
-              key={study.industry}
-              className="animate-fade-in-up rounded-3xl border border-cyan-100/20 bg-slate-800/75 p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-xl leading-none text-cyan-100">
-                📈
-              </div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">{study.industry}</p>
-              <h2 className="mt-2 text-lg font-semibold text-white">{study.headline}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-200">{study.result}</p>
-            </article>
+            <Reveal key={study.industry} delay={100 * index}>
+              <article className="glass-card rounded-3xl p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40">
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-xl leading-none text-cyan-100">
+                  📈
+                </div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">{study.industry}</p>
+                <h2 className="mt-2 text-lg font-semibold text-white">{study.headline}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-slate-100">{study.result}</p>
+              </article>
+            </Reveal>
           ))}
         </section>
 

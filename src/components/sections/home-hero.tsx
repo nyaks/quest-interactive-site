@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { benefits, heroStats, site } from "@/lib/site-data";
+import { Reveal } from "@/components/ui/reveal";
 
 export function HomeHero() {
   return (
@@ -31,41 +32,39 @@ export function HomeHero() {
 
           <div className="mt-12 grid gap-5 sm:grid-cols-3">
             {heroStats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className="group rounded-2xl border border-cyan-100/15 bg-slate-800/70 p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40 hover:bg-slate-800/90"
-                style={{ animationDelay: `${index * 90}ms` }}
-              >
-                <p className="text-3xl font-semibold text-cyan-200">{stat.value}</p>
-                <p className="mt-2 text-sm font-medium text-white">{stat.label}</p>
-                <p className="mt-1 text-xs text-slate-300">{stat.note}</p>
-              </div>
+              <Reveal key={stat.label} delay={70 * index}>
+                <div className="glass-card rounded-2xl p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40 hover:bg-slate-800/90">
+                  <p className="text-3xl font-semibold text-cyan-200">{stat.value}</p>
+                  <p className="mt-2 text-sm font-medium text-white">{stat.label}</p>
+                  <p className="mt-1 text-xs text-slate-100">{stat.note}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
 
-        <div className="animate-fade-in-up rounded-3xl border border-cyan-100/20 bg-gradient-to-br from-cyan-300/10 via-slate-800/90 to-slate-800/80 p-7 sm:p-9">
-          <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200">Why businesses choose Quest</p>
-          <ul className="mt-6 space-y-5">
-            {benefits.map((benefit, index) => (
-              <li
-                key={benefit.title}
-                className="rounded-2xl border border-cyan-100/15 bg-slate-800/85 p-5 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-200/35"
-                style={{ animationDelay: `${index * 110}ms` }}
-              >
-                <div className="flex items-start gap-4">
-                  <span className="mt-0.5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-2xl leading-none">
-                    {benefit.icon}
-                  </span>
-                  <div>
-                    <p className="text-base font-semibold text-white">{benefit.title}</p>
-                    <p className="mt-1.5 text-sm leading-relaxed text-slate-200">{benefit.description}</p>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Reveal delay={120}>
+          <div className="glass-card rounded-3xl p-7 sm:p-9">
+            <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200">Why businesses choose Quest</p>
+            <ul className="mt-6 space-y-5">
+              {benefits.map((benefit, index) => (
+                <Reveal key={benefit.title} delay={90 * index}>
+                  <li className="glass-card rounded-2xl p-5 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-200/35">
+                    <div className="flex items-start gap-4">
+                      <span className="mt-0.5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-2xl leading-none">
+                        {benefit.icon}
+                      </span>
+                      <div>
+                        <p className="text-base font-semibold text-white">{benefit.title}</p>
+                        <p className="mt-1.5 text-sm leading-relaxed text-slate-100">{benefit.description}</p>
+                      </div>
+                    </div>
+                  </li>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
