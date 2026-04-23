@@ -22,16 +22,19 @@ export const heroStats = [
 
 export const benefits = [
   {
+    icon: "⚡",
     title: "Instant response",
     description:
       "Engage leads the moment they reach out so your team never loses high-intent inquiries to slow follow-up.",
   },
   {
+    icon: "🕒",
     title: "Always available",
     description:
       "Capture and qualify demand after hours, on weekends, and during peak campaign periods without adding headcount.",
   },
   {
+    icon: "📅",
     title: "Hands-free booking",
     description:
       "Move qualified prospects directly into booked calls and demos on your calendar with automated reminders.",

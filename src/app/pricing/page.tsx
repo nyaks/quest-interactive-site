@@ -8,34 +8,38 @@ export default function PricingPage() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-20 sm:px-6 lg:px-8">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-24 sm:px-6 lg:px-8">
         <PageIntro
           eyebrow="Pricing"
           title="Simple packages for fast deployment and measurable ROI"
           description="Choose the plan that matches your lead volume and integration needs. Pricing values are placeholders and should be adjusted before launch."
         />
 
-        <section className="grid gap-5 lg:grid-cols-3">
-          {pricingTiers.map((tier) => (
+        <section className="grid gap-6 lg:grid-cols-3">
+          {pricingTiers.map((tier, index) => (
             <article
               key={tier.name}
-              className={`rounded-2xl border p-6 ${
+              className={`animate-fade-in-up rounded-3xl border p-7 transition duration-300 hover:-translate-y-1 ${
                 tier.featured
-                  ? "border-cyan-400 bg-cyan-500/10"
-                  : "border-white/10 bg-slate-900/70"
+                  ? "border-cyan-200/55 bg-cyan-200/12"
+                  : "border-cyan-100/20 bg-slate-800/75 hover:border-cyan-200/40"
               }`}
+              style={{ animationDelay: `${index * 90}ms` }}
             >
-              <p className="text-sm font-semibold uppercase tracking-wide text-cyan-300">{tier.name}</p>
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-xl leading-none text-cyan-100">
+                {tier.featured ? "★" : "✓"}
+              </div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200">{tier.name}</p>
               <p className="mt-3 text-3xl font-semibold text-white">{tier.price}</p>
-              <p className="mt-2 text-sm text-slate-300">{tier.description}</p>
-              <ul className="mt-5 space-y-2 text-sm text-slate-200">
+              <p className="mt-2 text-sm leading-relaxed text-slate-200">{tier.description}</p>
+              <ul className="mt-5 space-y-2 text-sm text-slate-100">
                 {tier.includes.map((item) => (
                   <li key={item}>• {item}</li>
                 ))}
               </ul>
               <Link
                 href="/contact"
-                className="mt-6 inline-block rounded-full bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                className="mt-7 inline-block rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-200"
               >
                 Book a Demo
               </Link>

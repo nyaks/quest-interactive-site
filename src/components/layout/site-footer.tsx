@@ -3,8 +3,8 @@ import { navigation, site } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-slate-950">
-      <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:px-8">
+    <footer className="border-t border-cyan-100/20 bg-slate-900/85">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
           <p className="text-base font-semibold text-white">{site.name}</p>
           <p className="mt-2 text-sm text-slate-300">{site.tagline}</p>
@@ -18,7 +18,7 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm text-slate-300">
             {navigation.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="transition hover:text-cyan-300">
+                <Link href={item.href} className="transition hover:text-cyan-100">
                   {item.label}
                 </Link>
               </li>
@@ -32,7 +32,7 @@ export function SiteFooter() {
           <p className="mt-1 text-sm text-slate-300">+254 700 000 000</p>
           <Link
             href="/contact"
-            className="mt-4 inline-block rounded-full border border-cyan-400 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-400 hover:text-slate-950"
+            className="mt-4 inline-block rounded-full border border-cyan-100/40 px-5 py-2.5 text-sm font-semibold text-cyan-100 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-200 hover:text-slate-950"
           >
             Start your demo
           </Link>

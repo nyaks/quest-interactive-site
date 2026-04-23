@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020617;
-  --foreground: #e2e8f0;
+  --background: #0f172a;
+  --foreground: #f1f5f9;
 }
 
 @theme inline {
@@ -24,10 +24,28 @@ body {
 
 body {
   min-height: 100vh;
-  background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.12), transparent 30%), var(--background);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(125, 211, 252, 0.2), transparent 32%),
+    radial-gradient(circle at 85% 15%, rgba(34, 211, 238, 0.16), transparent 28%),
+    linear-gradient(180deg, #111f3f 0%, #0f172a 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 520ms ease-out both;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -3,7 +3,7 @@ import { navigation, site } from "@/lib/site-data";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-cyan-100/20 bg-slate-900/85 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="text-base font-semibold tracking-wide text-white">
           {site.name}
@@ -14,7 +14,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-slate-200 transition hover:text-cyan-300"
+              className="text-sm text-slate-100 transition hover:text-cyan-100"
             >
               {item.label}
             </Link>
@@ -23,7 +23,7 @@ export function SiteHeader() {
 
         <Link
           href={site.ctaLink}
-          className="rounded-full bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+          className="rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-200"
         >
           Book a Free Demo
         </Link>

@@ -8,7 +8,7 @@ export default function CaseStudiesPage() {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-20 sm:px-6 lg:px-8">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-24 sm:px-6 lg:px-8">
         <PageIntro
           eyebrow="Case studies"
           title="Cross-industry examples of AI-assisted lead conversion"
@@ -16,11 +16,18 @@ export default function CaseStudiesPage() {
         />
 
         <section className="grid gap-5 md:grid-cols-3">
-          {caseStudies.map((study) => (
-            <article key={study.industry} className="rounded-2xl border border-white/10 bg-slate-900/70 p-6">
-              <p className="text-xs font-semibold uppercase tracking-wide text-cyan-300">{study.industry}</p>
+          {caseStudies.map((study, index) => (
+            <article
+              key={study.industry}
+              className="animate-fade-in-up rounded-3xl border border-cyan-100/20 bg-slate-800/75 p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-200/20 text-xl leading-none text-cyan-100">
+                📈
+              </div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-cyan-200">{study.industry}</p>
               <h2 className="mt-2 text-lg font-semibold text-white">{study.headline}</h2>
-              <p className="mt-3 text-sm text-slate-300">{study.result}</p>
+              <p className="mt-3 text-sm leading-relaxed text-slate-200">{study.result}</p>
             </article>
           ))}
         </section>
