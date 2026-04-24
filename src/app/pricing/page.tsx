@@ -13,7 +13,7 @@ export default function PricingPage() {
         <PageIntro
           eyebrow="Pricing"
           title="Simple packages for fast deployment and measurable ROI"
-          description="Choose the plan that matches your lead volume and integration needs. Pricing values are placeholders and should be adjusted before launch."
+          description="Choose the plan that matches your lead volume and integration needs. All plans include setup and training."
         />
 
         <section className="grid gap-6 lg:grid-cols-3">

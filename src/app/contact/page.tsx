@@ -92,8 +92,8 @@ export default function ContactPage() {
             >
               Message us on WhatsApp
             </Link>
-            <p className="text-sm text-slate-200">Email: hello@questinteractive.example</p>
-            <p className="text-sm text-slate-200">Phone: +254 700 000 000</p>
+            <p className="text-sm text-slate-200">Email: {site.email}</p>
+            <p className="text-sm text-slate-200">Phone: {site.phone}</p>
           </aside>
           </Reveal>
         </section>

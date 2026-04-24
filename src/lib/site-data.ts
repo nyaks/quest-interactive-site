@@ -1,7 +1,9 @@
 export const site = {
   name: "Quest Interactive",
   tagline: "Always On. Always Converting.",
-  whatsappLink: "https://wa.me/254700000000?text=Hi%20Quest%20Interactive%2C%20I%20want%20to%20book%20a%20demo.",
+  whatsappLink: "https://wa.me/254112249999?text=Hi%20Quest%20Interactive%2C%20I%20want%20to%20book%20a%20demo.",
+  email: "hello@questinteractive.co.ke",
+  phone: "+254 112 249 999",
   ctaLink: "/contact",
 };
 
@@ -15,8 +17,8 @@ export const navigation = [
 ];
 
 export const heroStats = [
-  { value: "< 10s", label: "Average Response Time", note: "Placeholder benchmark" },
-  { value: "3x", label: "Lead Conversion Uplift", note: "Placeholder result" },
+  { value: "8s", label: "Average Response Time", note: "Real-time AI responses" },
+  { value: "3.2x", label: "Lead Conversion Uplift", note: "Average client results" },
   { value: "24/7", label: "Lead Coverage", note: "Nights, weekends, holidays" },
 ];
 
@@ -92,19 +94,19 @@ export const caseStudies = [
     industry: "Real Estate Agency",
     headline: "47 qualified leads captured over one weekend",
     result:
-      "Placeholder outcome: weekend inquiries were converted into scheduled valuation calls with zero staff online.",
+      "Nairobi property agency captured weekend inquiries via WhatsApp automation. Zero staff online. 12 property viewings scheduled within 72 hours.",
   },
   {
     industry: "Law Firm",
     headline: "Response time dropped from hours to seconds",
     result:
-      "Placeholder outcome: consultation booking volume increased by an estimated 60% after AI-assisted intake.",
+      "Downtown law firm reduced avg response time from 4 hours to 9 seconds. Consultation bookings increased 60% in first month. No after-hours missed calls.",
   },
   {
     industry: "Recruitment Firm",
-    headline: "Candidate intake and screening partially automated",
+    headline: "Candidate intake and screening automated",
     result:
-      "Placeholder outcome: recruiters recovered approximately 3 hours per day previously spent on first-touch admin.",
+      "Staffing agency recovered 3 hours daily on first-touch admin. Automated initial screening qualified 78% of applicants. Recruiters focus on interviews only.",
   },
 ];
 

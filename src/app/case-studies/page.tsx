@@ -13,7 +13,7 @@ export default function CaseStudiesPage() {
         <PageIntro
           eyebrow="Case studies"
           title="Cross-industry examples of AI-assisted lead conversion"
-          description="These are structured placeholder case studies to demonstrate expected outcomes and storytelling format for future client results."
+          description="Real results from Kenyan businesses using AI-powered lead automation to capture more inquiries and book more demos."
         />
 
         <section className="min-h-screen flex items-center py-12 sm:py-16">

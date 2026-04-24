@@ -12,7 +12,7 @@ export function TrustBar() {
           <SectionHeading
             eyebrow="Industries"
             title="Built for SME teams across high-response sectors"
-            description="Placeholder categories representing the types of businesses Quest Interactive supports."
+            description="Industries where instant response and 24/7 coverage make the biggest impact on revenue."
           />
           <div className="mt-7 flex flex-wrap items-center gap-3.5">
             {industries.map((industry, index) => (

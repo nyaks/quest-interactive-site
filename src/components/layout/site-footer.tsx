@@ -15,8 +15,8 @@ export function SiteFooter() {
 
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-slate-300">Contact</p>
-          <p className="mt-3 text-sm text-slate-300">hello@questinteractive.example</p>
-          <p className="mt-1 text-sm text-slate-300">+254 700 000 000</p>
+          <p className="mt-3 text-sm text-slate-300">{site.email}</p>
+          <p className="mt-1 text-sm text-slate-300">{site.phone}</p>
           <Link
             href="/contact"
             className="mt-4 inline-block rounded-full border border-cyan-100/40 px-5 py-2.5 text-sm font-semibold text-cyan-100 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-200 hover:text-slate-950"
